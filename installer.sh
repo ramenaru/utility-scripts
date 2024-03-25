@@ -24,10 +24,13 @@ confirm() {
 
 # Define package groups
 declare -A packages
-packages[Video]="ffmpeg vlc"
-packages[Essentials]="xorg xorg-server base-devel"
-packages[Development]="git vim gcc"
-packages[Web]="firefox chromium"
+packages[Essentials]="xorg xorg-server base-devel htop zsh curl less openssh rsync avahi reflector"
+packages[Desktop]="lxappearance trash-cli tree fzf jq unzip zip whois wget rlwrap neofetch ncdu socat pacaur"
+packages[Development]="vim neovim base-devel code clang nodejs npm java-openjdk ruby rust cargo go docker python"
+packages[Network]="firefox chromium nginx postgresql nmap thunderbird discord wireshark-qt youtube-dl tor"
+packages[Media]="ffmpeg vlc bluez okular xournalapp libreoffice-fresh spotify audacity kdenlive mpv simplescreenrecorder gimp inkscape"
+packages[Font]="ttf-liberation ttf-jetbrains-mono noto-fonts-cjk ttf-font-awesome noto-fonts-cjk"
+packages[WindowManager]="rofi polybar alacritty picom nitrogen"
 
 install_packages() {
     for key in "${!packages[@]}"
