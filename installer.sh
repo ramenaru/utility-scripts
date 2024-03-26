@@ -30,7 +30,7 @@ packages[Development]="vim neovim base-devel code clang nodejs npm java-openjdk 
 packages[Network]="firefox chromium nginx postgresql nmap thunderbird discord wireshark-qt youtube-dl tor"
 packages[Media]="ffmpeg vlc bluez okular xournalapp libreoffice-fresh spotify audacity kdenlive mpv simplescreenrecorder gimp inkscape"
 packages[Font]="ttf-liberation ttf-jetbrains-mono noto-fonts-cjk ttf-font-awesome noto-fonts-cjk"
-packages[WindowManager]="rofi polybar alacritty picom nitrogen"
+packages[WindowManager]="rofi polybar alacritty picom nitrogen feh upower acpi"
 
 install_packages() {
     for key in "${!packages[@]}"
