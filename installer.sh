@@ -24,13 +24,10 @@ confirm() {
 
 # Define package groups
 declare -A packages
-packages[Essentials]="xorg xorg-server base-devel htop zsh curl less openssh rsync avahi reflector"
-packages[Desktop]="lxappearance trash-cli tree fzf jq unzip zip whois wget rlwrap neofetch ncdu socat pacaur"
-packages[Development]="vim neovim base-devel code clang nodejs npm java-openjdk ruby rust cargo go docker python"
-packages[Network]="firefox chromium nginx postgresql nmap thunderbird discord wireshark-qt youtube-dl tor"
-packages[Media]="ffmpeg vlc bluez okular xournalapp libreoffice-fresh spotify audacity kdenlive mpv simplescreenrecorder gimp inkscape"
-packages[Font]="ttf-liberation ttf-jetbrains-mono noto-fonts-cjk ttf-font-awesome noto-fonts-cjk"
-packages[WindowManager]="rofi polybar alacritty picom nitrogen feh upower acpi"
+packages[Essentials]="xorg xorg-server base-devel htop zsh curl openssh openssl unzip zip wget clang nodejs npm docker firefox chromium
+nginx ffmpeg mpv bluez bluez-utils ttf-liberation ttf-dejavu ttf-font-awesome rsync less reflector fzf go noto-fonts-cjk nerd-fonts alacritty feh upower acpi flameshot"
+packages[WindowManager]="lxappearance nitrogen i3 lightdm lightdm-gtk-greeter dmenu brightnessctl"
+packages[WindowManager]="whois neofetch discord yt-dlp gimp kdenlive virtualbox"
 
 install_packages() {
     for key in "${!packages[@]}"
