@@ -4,14 +4,12 @@ import pyfiglet
 import questionary
 
 def download_video(url, resolution, output_format, start_time, end_time, output_path, bitrate):
-    # Set up the yt-dlp command
     format_string = f'bestvideo[height<={resolution}]+bestaudio/best[height<={resolution}]' if output_format == 'mp4' else 'bestaudio/best'
     ydl_opts = {
         'format': format_string,
         'outtmpl': 'downloaded_video.%(ext)s'
     }
 
-    # Download the video or audio
     ydl_cmd = ['yt-dlp', url, '-f', ydl_opts['format'], '-o', ydl_opts['outtmpl']]
     try:
         subprocess.run(ydl_cmd, check=True)
@@ -19,7 +17,6 @@ def download_video(url, resolution, output_format, start_time, end_time, output_
         print(f"Error downloading video: {e}")
         return
 
-    # Determine the downloaded file extension
     downloaded_files = [f for f in os.listdir() if f.startswith('downloaded_video')]
     if not downloaded_files:
         print("Error: Downloaded file not found.")
@@ -27,7 +24,6 @@ def download_video(url, resolution, output_format, start_time, end_time, output_
 
     downloaded_file = downloaded_files[0]
 
-    # Construct the ffmpeg command for conversion and trimming
     if output_format == 'mp3':
         output_file = f'{output_path}.mp3'
         ffmpeg_cmd = [
@@ -43,14 +39,12 @@ def download_video(url, resolution, output_format, start_time, end_time, output_
             '-c', 'copy', output_file
         ]
     
-    # Run the ffmpeg command
     try:
         subprocess.run(ffmpeg_cmd, check=True)
     except subprocess.CalledProcessError as e:
         print(f"Error processing video: {e}")
         return
 
-    # Remove the temporary downloaded file
     try:
         os.remove(downloaded_file)
     except OSError as e:
@@ -60,7 +54,7 @@ def download_video(url, resolution, output_format, start_time, end_time, output_
 
 def main():
     ascii_title = pyfiglet.figlet_format("YT Downloader")
-    custom_note = "YT Custom Downloader by Ramenaru"
+    custom_note = "YT Custom Downloader by ramenaru"
     print(ascii_title)
     print(custom_note)
     print("="*len(custom_note))
@@ -77,9 +71,9 @@ def main():
             "Select the maximum resolution:",
             choices=["2160", "1440", "1080", "720", "480", "360", "240"]
         ).ask()
-        bitrate = None  # No bitrate selection for mp4
+        bitrate = None  
     else:
-        resolution = None  # No resolution selection for mp3
+        resolution = None
         bitrate = questionary.select(
             "Select the bitrate:",
             choices=["320k", "256k", "192k", "128k", "96k"]
