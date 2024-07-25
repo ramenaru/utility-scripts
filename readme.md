@@ -20,7 +20,7 @@ A collection of useful CLI tools designed for Linux-based operating systems, sim
 
 ## Tools Included
 
-## YT Custom Downloader
+## 📽️ YT Custom Downloader
 
 A CLI application to download YouTube videos as either video (MP4) or audio (MP3). The tool also allows specifying the resolution for video downloads and the bitrate for audio downloads, as well as trimming the video/audio to a specific time range.
 
@@ -57,7 +57,7 @@ A CLI application to download YouTube videos as either video (MP4) or audio (MP3
    ```
 ---
 
-## Arch Linux Package Installer
+## 👾 Arch Linux Package Installer
 
 This project provides a script designed to automate the installation of various package groups on Arch Linux.
 
