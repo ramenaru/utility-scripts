@@ -1,4 +1,4 @@
-# ramenaru's CLI Tools Collection
+# ramenaru's utility-scripts
 
 A collection of useful CLI tools designed for Linux-based operating systems, simplifying various daily tasks. This project includes scripts for media downloading, system setup, development tools, and more. Each tool is designed to be user-friendly and highly functional, enhancing your command-line experience.
 
@@ -26,7 +26,7 @@ A CLI application to download YouTube videos as either video (MP4) or audio (MP3
 
 #### Requirements
 
-- Python 3.x
+- `Python 3.x`
 - `yt-dlp`
 - `ffmpeg`
 - `pyfiglet`
