@@ -57,7 +57,7 @@ A CLI application to download YouTube videos as either video (MP4) or audio (MP3
    ```
 ---
 
-## 👾 Arch Linux Package Installer
+## Arch Linux Package Installer
 
 This project provides a script designed to automate the installation of various package groups on Arch Linux.
 
